@@ -1,0 +1,154 @@
+
+<style>
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(254,44,85,0.5)}50%{box-shadow:0 0 0 10px rgba(254,44,85,0)}}
+@keyframes pulse2{0%,100%{box-shadow:0 0 0 0 rgba(105,201,208,0.5)}50%{box-shadow:0 0 0 10px rgba(105,201,208,0)}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+@keyframes fadeup{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+*{box-sizing:border-box;margin:0;padding:0;}
+.wrap{background:#0A0A0A;font-family:var(--font-sans);max-width:390px;margin:0 auto;color:#fff;}
+.section-label{font-size:10px;font-weight:500;color:#555;text-transform:uppercase;letter-spacing:1.5px;text-align:center;padding:20px 0 12px;}
+.divider{height:0.5px;background:#1A1A1A;margin:0 20px;}
+
+.bump-wrap{margin:0 20px 8px;background:#111;border-radius:14px;border:1.5px solid #FE2C55;overflow:hidden;animation:fadeup 0.4s ease;}
+.bump-top{background:#FE2C55;padding:8px 14px;display:flex;align-items:center;gap:6px;}
+.bump-top-text{font-size:11px;font-weight:500;color:#fff;text-transform:uppercase;letter-spacing:0.8px;}
+.bump-top i{font-size:13px;color:#fff;}
+.bump-body{padding:16px 16px 14px;}
+.bump-row{display:flex;align-items:flex-start;gap:12px;}
+.bump-icon-wrap{width:44px;height:44px;border-radius:10px;background:#1A0008;border:0.5px solid #FE2C55;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.bump-icon-wrap i{font-size:20px;color:#FE2C55;}
+.bump-title{font-size:14px;font-weight:500;color:#fff;margin-bottom:4px;line-height:1.3;}
+.bump-sub{font-size:12px;color:#777;line-height:1.6;}
+.bump-price-row{display:flex;align-items:center;gap:8px;margin:14px 0 12px;}
+.bump-price{font-size:22px;font-weight:500;color:#fff;}
+.bump-price-old{font-size:13px;color:#444;text-decoration:line-through;}
+.bump-price-tag{background:#1A0008;border:0.5px solid #FE2C55;border-radius:6px;padding:3px 8px;font-size:11px;color:#FE2C55;}
+.bump-cta{display:flex;align-items:center;gap:10px;background:#FE2C55;border:none;border-radius:10px;padding:13px 16px;width:100%;cursor:pointer;animation:pulse 2s infinite;}
+.bump-checkbox{width:18px;height:18px;border-radius:4px;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.bump-checkbox i{font-size:12px;color:#FE2C55;}
+.bump-cta-text{font-size:13px;font-weight:500;color:#fff;text-align:left;line-height:1.3;}
+.bump-skip{text-align:center;padding:10px 0 4px;font-size:11px;color:#444;}
+
+.upsell-wrap{background:#0A0A0A;padding:0 0 32px;}
+.upsell-hero{padding:28px 20px 0;}
+.upsell-eyebrow{display:inline-flex;align-items:center;gap:5px;background:#001A1B;border:0.5px solid #69C9D0;border-radius:20px;padding:5px 12px;font-size:10px;color:#69C9D0;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:16px;animation:blink 2s infinite;}
+.upsell-eyebrow i{font-size:12px;}
+.upsell-h1{font-size:24px;font-weight:500;color:#fff;line-height:1.2;margin-bottom:14px;}
+.upsell-h1 .pink{color:#FE2C55;}
+.upsell-h1 .cyan{color:#69C9D0;}
+.upsell-sub{font-size:14px;color:#777;line-height:1.75;margin-bottom:0;}
+.upsell-sub strong{color:#fff;}
+.upsell-section{padding:24px 20px;border-bottom:0.5px solid #1A1A1A;}
+.upsell-section-alt{padding:24px 20px;border-bottom:0.5px solid #1A1A1A;background:#111;}
+.ulabel{font-size:10px;font-weight:500;color:#69C9D0;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;}
+.uh2{font-size:19px;font-weight:500;color:#fff;line-height:1.25;margin-bottom:12px;}
+.uh2 .cyan{color:#69C9D0;}
+.ubody{font-size:14px;color:#777;line-height:1.8;}
+.ubody strong{color:#fff;}
+.analyst-card{background:#141414;border-radius:14px;border:0.5px solid #222;padding:16px;margin-top:14px;display:flex;gap:14px;align-items:flex-start;}
+.analyst-avatar{width:52px;height:52px;border-radius:50%;background:#001A1B;border:1.5px solid #69C9D0;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:500;color:#69C9D0;flex-shrink:0;}
+.analyst-name{font-size:14px;font-weight:500;color:#fff;margin-bottom:3px;}
+.analyst-handle{font-size:11px;color:#69C9D0;margin-bottom:6px;}
+.analyst-bio{font-size:12px;color:#666;line-height:1.6;}
+.what-list{list-style:none;display:flex;flex-direction:column;gap:11px;margin-top:12px;}
+.what-list li{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:#777;line-height:1.5;}
+.what-icon{width:20px;height:20px;border-radius:50%;background:#001A1B;border:0.5px solid #69C9D0;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.what-icon i{font-size:11px;color:#69C9D0;}
+.price-box{background:#141414;border-radius:14px;border:0.5px solid #222;padding:20px;margin:14px 0;}
+.price-row{display:flex;align-items:baseline;gap:8px;margin-bottom:4px;}
+.price-big{font-size:40px;font-weight:500;color:#fff;line-height:1;}
+.price-mo{font-size:13px;color:#555;}
+.price-old{font-size:13px;color:#333;text-decoration:line-through;margin-bottom:16px;}
+.upsell-cta{display:block;width:100%;background:#69C9D0;color:#0A0A0A;font-size:15px;font-weight:500;border:none;border-radius:12px;padding:16px 0;text-align:center;cursor:pointer;animation:pulse2 2s infinite;}
+.upsell-skip{text-align:center;padding:12px 0 0;font-size:12px;color:#333;cursor:pointer;}
+.timer-row{display:flex;align-items:center;justify-content:center;gap:6px;margin:12px 0 0;font-size:12px;color:#FE2C55;}
+.timer-row i{font-size:14px;animation:blink 1s infinite;}
+</style>
+
+<h2 class="sr-only">Order bump e upsell — O Conector e análise Lucas Rocha</h2>
+
+<div class="wrap">
+
+  <p class="section-label">— checkout kiwify —</p>
+
+  <div class="bump-wrap">
+    <div class="bump-top">
+      <i class="ti ti-bolt" aria-hidden="true"></i>
+      <span class="bump-top-text">oferta exclusiva antes de confirmar</span>
+    </div>
+    <div class="bump-body">
+      <div class="bump-row">
+        <div class="bump-icon-wrap">
+          <i class="ti ti-file-text" aria-hidden="true"></i>
+        </div>
+        <div>
+          <p class="bump-title">Guia: Perfil que Marca Escolhe</p>
+          <p class="bump-sub">Lucas Rocha analisou +300 perfis e mapeou os 7 erros que fazem marca ignorar criador pequeno. Corrija antes de entrar no grupo.</p>
+        </div>
+      </div>
+      <div class="bump-price-row">
+        <span class="bump-price">R$19,90</span>
+        <span class="bump-price-old">R$47</span>
+        <span class="bump-price-tag">58% off</span>
+      </div>
+      <button class="bump-cta">
+        <div class="bump-checkbox"><i class="ti ti-check" aria-hidden="true"></i></div>
+        <span class="bump-cta-text">Sim, adicionar o guia por R$19,90</span>
+      </button>
+      <p class="bump-skip">Não, entrar sem o guia</p>
+    </div>
+  </div>
+
+  <div class="divider" style="margin:24px 20px 0;"></div>
+  <p class="section-label">— página de upsell —</p>
+
+  <div class="upsell-wrap">
+    <div class="upsell-hero">
+      <div class="upsell-eyebrow"><i class="ti ti-clock" aria-hidden="true"></i> oferta por tempo limitado</div>
+      <h1 class="upsell-h1">Espera. Você sabe o que a marca vai ver <span class="pink">primeiro</span> no seu perfil?</h1>
+      <p class="upsell-sub">As empresas do Conector recebem dezenas de candidatos por vaga. A primeira coisa que elas abrem é o <strong>seu perfil</strong>. Em 15 minutos, o Lucas Rocha analisa tudo — e te diz exatamente o que tá travando sua chance.</p>
+    </div>
+
+    <div class="upsell-section">
+      <div class="ulabel">quem vai analisar</div>
+      <div class="analyst-card">
+        <div class="analyst-avatar">LR</div>
+        <div>
+          <p class="analyst-name">Lucas Rocha</p>
+          <p class="analyst-handle">@lucasrocha.ugc</p>
+          <p class="analyst-bio">Fechou 11 parcerias com menos de 2 mil seguidores. Hoje analisa perfis e ensina criadores pequenos a serem escolhidos por marcas.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="upsell-section-alt">
+      <div class="ulabel">o que você recebe</div>
+      <h2 class="uh2">Análise completa do seu <span class="cyan">perfil</span></h2>
+      <ul class="what-list">
+        <li><div class="what-icon"><i class="ti ti-check" aria-hidden="true"></i></div>Bio, foto e feed avaliados com olhar de marca</li>
+        <li><div class="what-icon"><i class="ti ti-check" aria-hidden="true"></i></div>Linguagem e posicionamento — o que tá certo e o que afasta empresa</li>
+        <li><div class="what-icon"><i class="ti ti-check" aria-hidden="true"></i></div>Lista de ajustes prioritários pra aplicar antes da próxima candidatura</li>
+        <li><div class="what-icon"><i class="ti ti-check" aria-hidden="true"></i></div>Vídeo gravado exclusivo pro seu perfil — entregue em até 48h</li>
+      </ul>
+    </div>
+
+    <div class="upsell-section" style="border-bottom:none;">
+      <div class="ulabel">oferta</div>
+      <h2 class="uh2">Garanta agora com desconto de lançamento</h2>
+      <div class="price-box">
+        <div class="price-row">
+          <span class="price-big">R$97</span>
+        </div>
+        <p class="price-old">de R$147 — só nessa página</p>
+        <button class="upsell-cta">Quero minha análise por R$97 →</button>
+        <div class="timer-row">
+          <i class="ti ti-clock" aria-hidden="true"></i>
+          <span>Desconto válido só nessa página</span>
+        </div>
+      </div>
+      <p class="upsell-skip">Não, prefiro entrar no grupo sem análise</p>
+    </div>
+
+  </div>
+
+</div>
