@@ -1,152 +1,461 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UGC Club — Oferta Especial</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
 <style>
-@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(254,44,85,0.5)}50%{box-shadow:0 0 0 10px rgba(254,44,85,0)}}
-@keyframes pulse2{0%,100%{box-shadow:0 0 0 0 rgba(105,201,208,0.5)}50%{box-shadow:0 0 0 10px rgba(105,201,208,0)}}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
-@keyframes fadeup{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-*{box-sizing:border-box;margin:0;padding:0;}
-.wrap{background:#0A0A0A;font-family:var(--font-sans);max-width:390px;margin:0 auto;color:#fff;}
-.section-label{font-size:10px;font-weight:500;color:#555;text-transform:uppercase;letter-spacing:1.5px;text-align:center;padding:20px 0 12px;}
-.divider{height:0.5px;background:#1A1A1A;margin:0 20px;}
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-.bump-wrap{margin:0 20px 8px;background:#111;border-radius:14px;border:1.5px solid #FE2C55;overflow:hidden;animation:fadeup 0.4s ease;}
-.bump-top{background:#FE2C55;padding:8px 14px;display:flex;align-items:center;gap:6px;}
-.bump-top-text{font-size:11px;font-weight:500;color:#fff;text-transform:uppercase;letter-spacing:0.8px;}
-.bump-top i{font-size:13px;color:#fff;}
-.bump-body{padding:16px 16px 14px;}
-.bump-row{display:flex;align-items:flex-start;gap:12px;}
-.bump-icon-wrap{width:44px;height:44px;border-radius:10px;background:#1A0008;border:0.5px solid #FE2C55;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.bump-icon-wrap i{font-size:20px;color:#FE2C55;}
-.bump-title{font-size:14px;font-weight:500;color:#fff;margin-bottom:4px;line-height:1.3;}
-.bump-sub{font-size:12px;color:#777;line-height:1.6;}
-.bump-price-row{display:flex;align-items:center;gap:8px;margin:14px 0 12px;}
-.bump-price{font-size:22px;font-weight:500;color:#fff;}
-.bump-price-old{font-size:13px;color:#444;text-decoration:line-through;}
-.bump-price-tag{background:#1A0008;border:0.5px solid #FE2C55;border-radius:6px;padding:3px 8px;font-size:11px;color:#FE2C55;}
-.bump-cta{display:flex;align-items:center;gap:10px;background:#FE2C55;border:none;border-radius:10px;padding:13px 16px;width:100%;cursor:pointer;animation:pulse 2s infinite;}
-.bump-checkbox{width:18px;height:18px;border-radius:4px;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.bump-checkbox i{font-size:12px;color:#FE2C55;}
-.bump-cta-text{font-size:13px;font-weight:500;color:#fff;text-align:left;line-height:1.3;}
-.bump-skip{text-align:center;padding:10px 0 4px;font-size:11px;color:#444;}
+  :root {
+    --pink: #FE2C55;
+    --cyan: #25F4EE;
+    --dark: #010101;
+    --dark2: #0d0d0d;
+    --dark3: #1a1a1a;
+    --white: #fff;
+    --gray: #999;
+    --gray2: #2a2a2a;
+  }
 
-.upsell-wrap{background:#0A0A0A;padding:0 0 32px;}
-.upsell-hero{padding:28px 20px 0;}
-.upsell-eyebrow{display:inline-flex;align-items:center;gap:5px;background:#001A1B;border:0.5px solid #69C9D0;border-radius:20px;padding:5px 12px;font-size:10px;color:#69C9D0;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:16px;animation:blink 2s infinite;}
-.upsell-eyebrow i{font-size:12px;}
-.upsell-h1{font-size:24px;font-weight:500;color:#fff;line-height:1.2;margin-bottom:14px;}
-.upsell-h1 .pink{color:#FE2C55;}
-.upsell-h1 .cyan{color:#69C9D0;}
-.upsell-sub{font-size:14px;color:#777;line-height:1.75;margin-bottom:0;}
-.upsell-sub strong{color:#fff;}
-.upsell-section{padding:24px 20px;border-bottom:0.5px solid #1A1A1A;}
-.upsell-section-alt{padding:24px 20px;border-bottom:0.5px solid #1A1A1A;background:#111;}
-.ulabel{font-size:10px;font-weight:500;color:#69C9D0;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;}
-.uh2{font-size:19px;font-weight:500;color:#fff;line-height:1.25;margin-bottom:12px;}
-.uh2 .cyan{color:#69C9D0;}
-.ubody{font-size:14px;color:#777;line-height:1.8;}
-.ubody strong{color:#fff;}
-.analyst-card{background:#141414;border-radius:14px;border:0.5px solid #222;padding:16px;margin-top:14px;display:flex;gap:14px;align-items:flex-start;}
-.analyst-avatar{width:52px;height:52px;border-radius:50%;background:#001A1B;border:1.5px solid #69C9D0;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:500;color:#69C9D0;flex-shrink:0;}
-.analyst-name{font-size:14px;font-weight:500;color:#fff;margin-bottom:3px;}
-.analyst-handle{font-size:11px;color:#69C9D0;margin-bottom:6px;}
-.analyst-bio{font-size:12px;color:#666;line-height:1.6;}
-.what-list{list-style:none;display:flex;flex-direction:column;gap:11px;margin-top:12px;}
-.what-list li{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:#777;line-height:1.5;}
-.what-icon{width:20px;height:20px;border-radius:50%;background:#001A1B;border:0.5px solid #69C9D0;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
-.what-icon i{font-size:11px;color:#69C9D0;}
-.price-box{background:#141414;border-radius:14px;border:0.5px solid #222;padding:20px;margin:14px 0;}
-.price-row{display:flex;align-items:baseline;gap:8px;margin-bottom:4px;}
-.price-big{font-size:40px;font-weight:500;color:#fff;line-height:1;}
-.price-mo{font-size:13px;color:#555;}
-.price-old{font-size:13px;color:#333;text-decoration:line-through;margin-bottom:16px;}
-.upsell-cta{display:block;width:100%;background:#69C9D0;color:#0A0A0A;font-size:15px;font-weight:500;border:none;border-radius:12px;padding:16px 0;text-align:center;cursor:pointer;animation:pulse2 2s infinite;}
-.upsell-skip{text-align:center;padding:12px 0 0;font-size:12px;color:#333;cursor:pointer;}
-.timer-row{display:flex;align-items:center;justify-content:center;gap:6px;margin:12px 0 0;font-size:12px;color:#FE2C55;}
-.timer-row i{font-size:14px;animation:blink 1s infinite;}
+  body {
+    background: var(--dark);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* URGENCY BAR */
+  .urgency-bar {
+    background: var(--pink);
+    color: #fff;
+    text-align: center;
+    padding: 11px 16px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .urgency-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #fff;
+    animation: blink 1s infinite;
+    flex-shrink: 0;
+  }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.2} }
+
+  /* HERO */
+  .hero {
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 56px 24px 40px;
+    text-align: center;
+  }
+
+  .step-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--dark3);
+    border: 1px solid var(--cyan);
+    color: var(--cyan);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 28px;
+  }
+
+  .hero h1 {
+    font-size: clamp(26px, 5.5vw, 44px);
+    font-weight: 900;
+    line-height: 1.15;
+    margin-bottom: 18px;
+  }
+
+  .highlight-pink { color: var(--pink); }
+  .highlight-cyan { color: var(--cyan); }
+
+  .hero p {
+    font-size: clamp(15px, 2.5vw, 17px);
+    color: var(--gray);
+    max-width: 500px;
+    margin: 0 auto 36px;
+  }
+  .hero p strong { color: var(--white); }
+
+  /* AVATAR LUCAS */
+  .lucas-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--dark3);
+    border: 1px solid var(--gray2);
+    border-radius: 16px;
+    padding: 20px 24px;
+    max-width: 480px;
+    margin: 0 auto 40px;
+    text-align: left;
+  }
+  .avatar {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: var(--pink);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 900;
+    font-size: 20px;
+    flex-shrink: 0;
+    border: 2px solid var(--pink);
+  }
+  .lucas-info .name {
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 2px;
+  }
+  .lucas-info .handle {
+    font-size: 12px;
+    color: var(--cyan);
+    margin-bottom: 6px;
+  }
+  .lucas-info .bio {
+    font-size: 13px;
+    color: var(--gray);
+    line-height: 1.5;
+  }
+
+  /* DIVIDER */
+  hr {
+    border: none;
+    border-top: 1px solid var(--gray2);
+    max-width: 620px;
+    margin: 0 auto;
+  }
+
+  /* SECTIONS */
+  section {
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 52px 24px;
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--cyan);
+    margin-bottom: 14px;
+  }
+
+  h2 {
+    font-size: clamp(20px, 3.5vw, 30px);
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+
+  p { color: var(--gray); margin-bottom: 14px; }
+  p strong { color: var(--white); }
+
+  /* O QUE INCLUI */
+  .includes {
+    list-style: none;
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .includes li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: var(--dark3);
+    border: 1px solid var(--gray2);
+    border-radius: 12px;
+    padding: 16px 18px;
+  }
+  .includes li .check {
+    color: var(--cyan);
+    font-weight: 900;
+    font-size: 16px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .includes li .item-title {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--white);
+    margin-bottom: 3px;
+  }
+  .includes li .item-desc {
+    font-size: 13px;
+    color: var(--gray);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* OFERTA */
+  .offer-wrap {
+    background: var(--dark2);
+    border-top: 1px solid var(--gray2);
+    padding: 60px 24px;
+    text-align: center;
+  }
+  .offer-inner {
+    max-width: 460px;
+    margin: 0 auto;
+  }
+  .offer-inner h2 {
+    margin-bottom: 8px;
+  }
+  .offer-inner .sub {
+    color: var(--gray);
+    font-size: 15px;
+    margin-bottom: 32px;
+  }
+
+  .price-box {
+    background: var(--dark3);
+    border: 1px solid var(--gray2);
+    border-radius: 20px;
+    padding: 32px 28px;
+    margin-bottom: 20px;
+  }
+
+  .price-old {
+    font-size: 14px;
+    color: var(--gray);
+    text-decoration: line-through;
+    margin-bottom: 4px;
+  }
+  .price-main {
+    font-size: 56px;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+  .price-main sup {
+    font-size: 22px;
+    vertical-align: top;
+    margin-top: 10px;
+    display: inline-block;
+    color: var(--gray);
+  }
+  .price-desc {
+    font-size: 13px;
+    color: var(--gray);
+    margin-bottom: 28px;
+  }
+
+  .badge-desconto {
+    display: inline-block;
+    background: var(--pink);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+  }
+
+  /* CTA */
+  .cta-btn {
+    display: block;
+    width: 100%;
+    background: var(--pink);
+    color: #fff;
+    font-weight: 900;
+    font-size: 17px;
+    padding: 18px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    animation: pulse 2s infinite;
+    letter-spacing: .3px;
+    text-align: center;
+  }
+  @keyframes pulse {
+    0%,100%{box-shadow:0 0 0 0 rgba(254,44,85,.4)}
+    50%{box-shadow:0 0 0 14px rgba(254,44,85,0)}
+  }
+
+  .refuse-link {
+    display: block;
+    margin-top: 16px;
+    font-size: 12px;
+    color: var(--gray);
+    text-decoration: underline;
+    cursor: pointer;
+    text-align: center;
+  }
+  .refuse-link:hover { color: #666; }
+
+  /* SEALS */
+  .seals {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  .seal {
+    font-size: 11px;
+    color: var(--gray);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  /* COUNTDOWN */
+  .countdown-wrap {
+    background: var(--dark3);
+    border: 1px solid var(--gray2);
+    border-radius: 12px;
+    padding: 14px 20px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--gray);
+  }
+  .countdown-wrap strong { color: var(--pink); font-size: 15px; }
+
+  @media(max-width: 480px) {
+    .lucas-card { flex-direction: column; text-align: center; }
+    .lucas-info .bio { display: none; }
+  }
 </style>
+</head>
+<body>
 
-
-<div class="wrap">
-
-  <p class="section-label">— checkout kiwify —</p>
-
-  <div class="bump-wrap">
-    <div class="bump-top">
-      <i class="ti ti-bolt" aria-hidden="true"></i>
-      <span class="bump-top-text">oferta exclusiva antes de confirmar</span>
-    </div>
-    <div class="bump-body">
-      <div class="bump-row">
-        <div class="bump-icon-wrap">
-          <i class="ti ti-file-text" aria-hidden="true"></i>
-        </div>
-        <div>
-          <p class="bump-title">Guia: Perfil que Marca Escolhe</p>
-          <p class="bump-sub">Lucas Rocha analisou +300 perfis e mapeou os 7 erros que fazem marca ignorar criador pequeno. Corrija antes de entrar no grupo.</p>
-        </div>
-      </div>
-      <div class="bump-price-row">
-        <span class="bump-price">R$19,90</span>
-        <span class="bump-price-old">R$47</span>
-        <span class="bump-price-tag">58% off</span>
-      </div>
-      <button class="bump-cta">
-        <div class="bump-checkbox"><i class="ti ti-check" aria-hidden="true"></i></div>
-        <span class="bump-cta-text">Sim, adicionar o guia por R$19,90</span>
-      </button>
-      <p class="bump-skip">Não, entrar sem o guia</p>
-    </div>
-  </div>
-
-  <div class="divider" style="margin:24px 20px 0;"></div>
-  <p class="section-label">— página de upsell —</p>
-
-  <div class="upsell-wrap">
-    <div class="upsell-hero">
-      <div class="upsell-eyebrow"><i class="ti ti-clock" aria-hidden="true"></i> oferta por tempo limitado</div>
-      <h1 class="upsell-h1">Espera. Você sabe o que a marca vai ver <span class="pink">primeiro</span> no seu perfil?</h1>
-      <p class="upsell-sub">As empresas do Conector recebem dezenas de candidatos por vaga. A primeira coisa que elas abrem é o <strong>seu perfil</strong>. Em 15 minutos, o Lucas Rocha analisa tudo — e te diz exatamente o que tá travando sua chance.</p>
-    </div>
-
-    <div class="upsell-section">
-      <div class="ulabel">quem vai analisar</div>
-      <div class="analyst-card">
-        <div class="analyst-avatar">LR</div>
-        <div>
-          <p class="analyst-name">Lucas Rocha</p>
-          <p class="analyst-handle">@lucasrocha.ugc</p>
-          <p class="analyst-bio">Fechou 11 parcerias com menos de 2 mil seguidores. Hoje analisa perfis e ensina criadores pequenos a serem escolhidos por marcas.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="upsell-section-alt">
-      <div class="ulabel">o que você recebe</div>
-      <h2 class="uh2">Análise completa do seu <span class="cyan">perfil</span></h2>
-      <ul class="what-list">
-        <li><div class="what-icon"><i class="ti ti-check" aria-hidden="true"></i></div>Bio, foto e feed avaliados com olhar de marca</li>
-        <li><div class="what-icon"><i class="ti ti-check" aria-hidden="true"></i></div>Linguagem e posicionamento — o que tá certo e o que afasta empresa</li>
-        <li><div class="what-icon"><i class="ti ti-check" aria-hidden="true"></i></div>Lista de ajustes prioritários pra aplicar antes da próxima candidatura</li>
-        <li><div class="what-icon"><i class="ti ti-check" aria-hidden="true"></i></div>Vídeo gravado exclusivo pro seu perfil — entregue em até 48h</li>
-      </ul>
-    </div>
-
-    <div class="upsell-section" style="border-bottom:none;">
-      <div class="ulabel">oferta</div>
-      <h2 class="uh2">Garanta agora com desconto de lançamento</h2>
-      <div class="price-box">
-        <div class="price-row">
-          <span class="price-big">R$97</span>
-        </div>
-        <p class="price-old">de R$147 — só nessa página</p>
-        <button class="upsell-cta">Quero minha análise por R$97 →</button>
-        <div class="timer-row">
-          <i class="ti ti-clock" aria-hidden="true"></i>
-          <span>Desconto válido só nessa página</span>
-        </div>
-      </div>
-      <p class="upsell-skip">Não, prefiro entrar no grupo sem análise</p>
-    </div>
-
-  </div>
-
+<!-- URGENCY BAR -->
+<div class="urgency-bar">
+  <div class="urgency-dot"></div>
+  Você acabou de entrar no UGC Club — oferta exclusiva disponível só agora
 </div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="step-label">⚡ oferta única pós-compra</div>
+
+  <h1>
+    Espera. Antes de entrar no grupo —<br>
+    você sabe o que a marca vai ver<br>
+    <span class="highlight-pink">primeiro no seu perfil?</span>
+  </h1>
+
+  <p>
+    As empresas do UGC Club recebem dezenas de candidatos por vaga. A primeira coisa que elas abrem é o seu perfil. <strong>Em 15 minutos, o Lucas Rocha analisa o seu</strong> e te diz exatamente o que tá travando sua chance de ser escolhido.
+  </p>
+
+  <!-- LUCAS CARD -->
+  <div class="lucas-card">
+    <div class="avatar">LR</div>
+    <div class="lucas-info">
+      <div class="name">Lucas Rocha</div>
+      <div class="handle">@lucasrocha.ugc · TikTok</div>
+      <div class="bio">Fechou 12 parcerias com menos de 2k seguidores. Hoje analisa perfis e ensina o que as marcas realmente olham antes de escolher um criador.</div>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<!-- O QUE INCLUI -->
+<section>
+  <div class="section-label">o que você recebe</div>
+  <h2>Análise completa do seu perfil — <span class="highlight-cyan">gravada e entregue em 48h</span></h2>
+  <p>Não é feedback genérico. É análise específica pro seu perfil, gravada em vídeo pelo Lucas, com tudo que você precisa corrigir antes de se candidatar às vagas.</p>
+
+  <ul class="includes">
+    <li>
+      <span class="check">✓</span>
+      <div>
+        <div class="item-title">Bio e apresentação</div>
+        <div class="item-desc">O que a marca lê nos primeiros 3 segundos e por que isso define se ela continua ou fecha o perfil.</div>
+      </div>
+    </li>
+    <li>
+      <span class="check">✓</span>
+      <div>
+        <div class="item-title">Feed e consistência visual</div>
+        <div class="item-desc">Se o seu feed transmite profissionalismo ou afasta marcas antes de você abrir a boca.</div>
+      </div>
+    </li>
+    <li>
+      <span class="check">✓</span>
+      <div>
+        <div class="item-title">Linguagem e posicionamento</div>
+        <div class="item-desc">Se você parece um criador que vale pagar ou só mais um perfil aleatório.</div>
+      </div>
+    </li>
+    <li>
+      <span class="check">✓</span>
+      <div>
+        <div class="item-title">Lista de ajustes prioritários</div>
+        <div class="item-desc">Os 3 a 5 pontos exatos que você precisa mudar hoje pra aumentar suas chances de ser selecionado.</div>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<hr>
+
+<!-- OFERTA FINAL -->
+<div class="offer-wrap">
+  <div class="offer-inner">
+    <div class="section-label" style="text-align:center;margin-bottom:12px;">oferta exclusiva</div>
+    <h2>Desconto exclusivo <span class="highlight-pink">só nessa página</span></h2>
+    <p class="sub">Essa oferta some quando você sair daqui.</p>
+
+    <div class="countdown-wrap">
+      <div class="urgency-dot" style="background:var(--pink);"></div>
+      Oferta expira em <strong id="timer">09:59</strong>
+    </div>
+
+    <div class="price-box">
+      <div class="badge-desconto">34% OFF — só agora</div>
+      <div class="price-old">De R$147,00</div>
+      <div class="price-main"><sup>R$</sup>97</div>
+      <div class="price-desc">pagamento único · entrega em até 48h</div>
+
+      <a href="#" class="cta-btn">Quero minha análise por R$97 →</a>
+    </div>
+
+    <a href="#" class="refuse-link">Não, prefiro entrar no grupo sem análise</a>
+
+    <div class="seals">
+      <div class="seal">🔒 Pagamento seguro</div>
+      <div class="seal">⚡ Entrega em 48h</div>
+      <div class="seal">📱 Vídeo no celular</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  var t = 9 * 60 + 59;
+  var el = document.getElementById('timer');
+  setInterval(function() {
+    if (t <= 0) return;
+    t--;
+    var m = Math.floor(t / 60);
+    var s = t % 60;
+    el.textContent = (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+  }, 1000);
+</script>
+
+</body>
+</html>
